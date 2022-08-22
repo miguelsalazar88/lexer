@@ -8,6 +8,7 @@ reservadas = ['False','def','if','raise','None','del','import','return',
                 'break','for','not','class','from','or','continue','global','pass',
                 'self', '__peg_parser__','async']
 
+# Lista de tokens de asignacion
 asig = ['+=', '-=','*=','@=','/=','%=','&=','|=','^=','<<=','>>=','**=','//=']
 
 
