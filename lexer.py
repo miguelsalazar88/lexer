@@ -5,7 +5,7 @@ regex_id = r"^[^\d\W]\w*\Z"
 
 #Metodo que identifica si una palabra es valida para identificador.
 def esId(s):
-    if re.match(regex_id, s):
+    if re.search(regex_id, s):
         return True
     else:
         return False
@@ -15,7 +15,7 @@ regex_num = r'^[0-9]*[.]{0,1}[0-9]*$'
 
 #Metodo que identifica si una palabra es valida para numero
 def esNum(s):
-    if re.match(regex_num, s):
+    if re.search(regex_num, s):
         return True
     else:
         return False
