@@ -1,19 +1,28 @@
 import re
 from lexer import *
 
-file = open('code.txt','r')
+#Abre el archivo a leer en modo de solo lectura 
+file = open('code2.txt','r')
+#Almacena el texto contenido en el archivo, linea por linea
 lines = file.readlines()
 
+#Contador de Filas
 count = 0
+#Lista para guardar todas las palabras separadas
 palabras_final = []
 
 for line in lines:
     count += 1
+    #Omite todo en la linea que está después del simbolo '#'
+    if '#' in line:
+        line = line[:line.index('#')]
+    
+    #Se separa la linea mediante el metodo split()
     words = line.split();
+    
     newWords = list()
     for i in range(len(words)):
         if words[i][0] in("'",'"') and words[i][-1] in("'",'"'):
-            print("****************{}******************".format(words[i]))
             newWords.append((words[i],count,line.find(words[i])))
         else:
             t = re.findall(r"[\w]+|[^\s\w]|[-:\w]", words[i])

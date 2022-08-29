@@ -54,4 +54,7 @@ def esDelimiter(s):
     else:
         return False
 
+def get_strings(line):
+    print(re.findall('"([^"]*)"', line))
+
 
